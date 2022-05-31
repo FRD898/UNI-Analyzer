@@ -1,0 +1,18 @@
+{
+  "name": "uni-analyzer",
+  "version": "1.0.0",
+  "description": "Web app that enables teachers to predict his students performance and make analysis about their data. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "EDM",
+    "Machine",
+    "Learning",
+    "React",
+    "Flask"
+  ],
+  "author": "Freider Achic-Cuenca <freider8998@gmail.com>",
+  "license": "ISC"
+}
