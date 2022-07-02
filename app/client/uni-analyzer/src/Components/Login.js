@@ -36,7 +36,7 @@ const CustomContainer = styled(Paper)(({ theme }) => ({
 }));
 
 const CustomFormContainer = styled(Paper)(({theme})=>({
-    backgroundImage: `url(${pabellon})`,
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${pabellon})`,
     backgroundSize: "cover",
     width: "80%",
     height: "auto",
@@ -91,7 +91,7 @@ const CustomLogo = styled("img")(({theme})=>({
 const CustomLink = styled('a')(({theme})=>({
     textDecoration: "none",
     color: "black",
-    fontSize: theme.palette.text.sm,
+    fontSize: "14px",
 }))
 
 export default function Login(){
