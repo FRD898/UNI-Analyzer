@@ -21,7 +21,6 @@ function App() {
         <Route path='/circular' element={<AnalizarCircular/>}> </Route>
         <Route path='*' element={<Home/>}></Route>
       </Route>
-
       <Route path="/login" element={<Login/>}></Route>
       
     </Routes>
