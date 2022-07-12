@@ -1,6 +1,6 @@
 import { CustomMenuContainer, 
-    CustomListItem, 
-    CustomListMenu,
+    CustomNavLink, 
+    CustomListNav,
     CustomUserInfo, 
     CustomUserName} from "./StyledMenu";
 import { CustomLink, CustomLogo, CustomSubtitle } from "../CustomStyles/CustomComponents";
@@ -10,25 +10,31 @@ import { theme } from "../theme";
 import { TextField } from "@mui/material";
 
 export default function Menu(){
+    const activeLink = ({ isActive }) => {
+        return {
+          color: isActive ? "white" : theme.palette.secondary.main,
+          fontWeight: isActive ? "bold  ": "",
+        };
+    }
     return (
         <ThemeProvider theme={theme}>
             <CustomMenuContainer>
                 <CustomLogo alt="logo Universidad Nacional de Ingenieria" src={logoUni}/>
                 <CustomSubtitle>Herramientas </CustomSubtitle>
-                <CustomListMenu>
-                    <CustomListItem>
+                <CustomListNav>
+                    <CustomNavLink to={'/predecir'} style={activeLink}>
                         Predecir
-                    </CustomListItem>
-                    <CustomListItem>
+                    </CustomNavLink>
+                    <CustomNavLink to={'/analizar'} style={activeLink}>
                         Analizar
-                    </CustomListItem>
-                    <CustomListItem>
+                    </CustomNavLink>
+                    <CustomNavLink to={'/encuesta'} style={activeLink}>
                         Encuesta
-                    </CustomListItem>
-                    <CustomListItem>
+                    </CustomNavLink>
+                    <CustomNavLink to={'/salones'} style={activeLink}>
                         Salones
-                    </CustomListItem>
-                </CustomListMenu>
+                    </CustomNavLink>
+                </CustomListNav>
                 <CustomUserInfo>
                     <img src="./" alt="Logo user"></img>
                     <CustomUserName>Freider Achic</CustomUserName>

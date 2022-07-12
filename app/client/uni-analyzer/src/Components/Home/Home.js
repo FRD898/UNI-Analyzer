@@ -7,7 +7,6 @@ export default function Home(){
     return(
         <ThemeProvider theme={theme}>
             <CustomPageContainer>
-                <Menu/>
                 <CustomHomeContainer>
                     <CustomTitle>
                         ANALYZER

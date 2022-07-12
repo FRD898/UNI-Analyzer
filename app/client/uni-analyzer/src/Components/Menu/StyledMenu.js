@@ -2,6 +2,7 @@ import { styled } from '@mui/material/styles';
 import {Box,
         List,
         ListItem} from "@mui/material/";
+import { NavLink } from "react-router-dom";
 const CustomMenuContainer = styled(Box)(({theme})=>({
     width:"300px",
     height:"100vh",
@@ -13,16 +14,21 @@ const CustomMenuContainer = styled(Box)(({theme})=>({
     alignItems: "center",
 }));
 
-const CustomListMenu = styled(List)(({theme})=>({
-    color: theme.palette.secondary.main,
-    fontSize: theme.palette.text.md,
+const CustomListNav = styled('nav')(({theme})=>({
+    display: "flex",
+    flexDirection: "column",
+    
 }));
 
-const CustomListItem = styled(ListItem)(({theme})=>({
+const CustomNavLink = styled(NavLink)(({theme})=>({
+    textDecoration: "none",
+    fontSize: theme.palette.text.md,
+    color: theme.palette.secondary.main,
     "&:hover":{
         color: theme.palette.text.secondary,
         cursor: "pointer",
-    }
+    },
+    margin:"4px",
 }));
 
 const CustomUserInfo = styled(Box)(({theme})=>({
@@ -41,4 +47,4 @@ const CustomUserName = styled(Box)(({theme})=>({
     }
 }));
 
-export {CustomMenuContainer, CustomListMenu, CustomListItem, CustomUserInfo,CustomUserName} 
+export {CustomMenuContainer, CustomListNav, CustomNavLink, CustomUserInfo,CustomUserName} 
