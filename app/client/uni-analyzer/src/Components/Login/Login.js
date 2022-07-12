@@ -7,92 +7,25 @@ import {Button,
         InputAdornment,
         FormControl,
         FormGroup} from "@mui/material/";
-import { theme } from "./theme";
+import { theme } from "../theme";
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Container } from "@mui/system";
-import logoUni from "./logoUNI.png";
-import pabellon from "./UNI-pabellon.jpg";
 
-const CustomTitle = styled('h1')(({theme})=>({
-    fontSize: theme.palette.text.lg,
-    fontWeight: "bold",
-}));
-const CustomSubtitle = styled('h2')(({theme})=>({
-    fontSize: theme.palette.text.md,
-    fontWeight: "bold",
-}));
+import logoUni from "../../Images/logoUNI.png";
 
-const CustomContainer = styled(Paper)(({ theme }) => ({
-    //main: theme.palette.primary.main,
-    background: theme.palette.background.default,
-    height: "auto",
-    margin: "0",
-    display: "flex",
-    textAlign: "center",
-    flexDirection: "column",
-    alignItems: "center",
-}));
+import {CustomButton,
+        CustomContainer,
+        CustomForm,
+        CustomFormContainer,
+        CustomInput,
+        CustomLabel,
+        CustomLink,
+        CustomLogo,
+        CustomTitle,
+        CustomSubtitle} from "../CustomStyles/CustomComponents";
 
-const CustomFormContainer = styled(Paper)(({theme})=>({
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${pabellon})`,
-    backgroundSize: "cover",
-    width: "80%",
-    height: "auto",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    border: `solid 6px ${theme.palette.secondary.main}`,
-    borderRadius: "24px",
-    padding: "40px 0px",
-}));
-
-const CustomForm = styled(FormGroup)(({theme})=>({
-    height: "auto",
-    width: "350px",
-    'margin': "10px",
-    padding: "40px 10px",
-    border: `solid 4px ${theme.palette.secondary.main}`,
-    background: theme.palette.primary.main,
-    borderRadius: "12px",
-    display: "flex",
-    alignItems: "center",
-}))
-
-const CustomLabel = styled(InputLabel)(({theme})=>({
-    fontSize: theme.palette.text.sm
-}));
-
-const CustomInput = styled(Input)(({theme})=>({
-    background: "white",
-    color: "black",
-    borderRadius: "6px",
-    paddingLeft: "6px",
-    margin:"12px",
-    width: "280px",
-    fontSize: theme.palette.text.sm,
-}))
-
-const CustomButton= styled(Button)(({theme})=>({
-    background: "black",
-    color: theme.palette.primary,
-    borderRadius: "6px",
-    margin:"12px",
-    border: "solid 1px white",
-    fontWeight: "bold",
-    fontSize: theme.palette.text.sm,
-}));
-const CustomLogo = styled("img")(({theme})=>({
-    width: "120px",
-    height: "140px",
-}));
-
-const CustomLink = styled('a')(({theme})=>({
-    textDecoration: "none",
-    color: "black",
-    fontSize: "14px",
-}))
 
 export default function Login(){
     const [values, setValues] = useState({

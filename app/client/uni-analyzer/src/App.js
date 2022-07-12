@@ -1,8 +1,11 @@
 import './App.css';
-import Login from './Components/Login';
+import Home from './Components/Home/Home';
+import Login from './Components/Login/Login';
+
 function App() {
   return (
-    <Login></Login>
+    <Home></Home>
+    //<Login></Login>
   );
 }
 
