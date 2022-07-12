@@ -14,8 +14,9 @@ export const theme = createTheme({
             primary: "#FADAD3",
             secondary: "white",
             sm: "18px",
-            md: "32px",
-            lg: "35px",
+            md: "24px",
+            lg: "32px",
+            xlg: "35px",
         },
         primary: {
         main: '#7C271E',

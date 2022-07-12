@@ -11,12 +11,12 @@ import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import pabellon from "../../Images/UNI-pabellon.jpg";
 
 const CustomTitle = styled('h1')(({theme})=>({
-    fontSize: theme.palette.text.lg,
+    fontSize: theme.palette.text.xlg,
     fontWeight: "bold",
     color: "white"
 }));
 const CustomSubtitle = styled('h2')(({theme})=>({
-    fontSize: theme.palette.text.md,
+    fontSize: theme.palette.text.lg,
     fontWeight: "bold",
     color: theme.palette.text.primary,
 }));
@@ -96,6 +96,12 @@ const CustomLink = styled('a')(({theme})=>({
     }
 }))
 
+const CustomPageContainer = styled(Paper)(({theme})=>({
+    display: "flex",
+    width: "100%",
+    height: "auto",
+}))
+
 export {CustomButton, CustomContainer, CustomForm, CustomFormContainer, CustomInput, CustomLabel,
-    CustomLink, CustomLogo, CustomSubtitle, CustomTitle
+    CustomLink, CustomLogo, CustomSubtitle, CustomTitle, CustomPageContainer,
 }

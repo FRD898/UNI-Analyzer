@@ -4,7 +4,7 @@ import {Box,
         ListItem} from "@mui/material/";
 const CustomMenuContainer = styled(Box)(({theme})=>({
     width:"300px",
-    height:"800px",
+    height:"100vh",
     borderRight: `4px solid ${theme.palette.secondary.main}`,
     background: theme.palette.primary.main,
     display: "flex",
@@ -15,7 +15,7 @@ const CustomMenuContainer = styled(Box)(({theme})=>({
 
 const CustomListMenu = styled(List)(({theme})=>({
     color: theme.palette.secondary.main,
-    fontSize: theme.palette.text.sm,
+    fontSize: theme.palette.text.md,
 }));
 
 const CustomListItem = styled(ListItem)(({theme})=>({
