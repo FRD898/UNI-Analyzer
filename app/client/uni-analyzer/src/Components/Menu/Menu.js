@@ -7,7 +7,7 @@ import { CustomLink, CustomLogo, CustomSubtitle } from "../CustomStyles/CustomCo
 import logoUni from "../../Images/logoUNI.png";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../theme";
-import { TextField } from "@mui/material";
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 export default function Menu(){
     const activeLink = ({ isActive }) => {
@@ -36,10 +36,11 @@ export default function Menu(){
                     </CustomNavLink>
                 </CustomListNav>
                 <CustomUserInfo>
-                    <img src="./" alt="Logo user"></img>
+                    <AccountCircleOutlinedIcon sx={{fontSize: 50}}></AccountCircleOutlinedIcon>
                     <CustomUserName>Freider Achic</CustomUserName>
                 </CustomUserInfo>
-                <CustomLink href="./">
+                <CustomUserName>Log Out</CustomUserName>
+                <CustomLink href="/login">
                     About us
                 </CustomLink>
             </CustomMenuContainer>

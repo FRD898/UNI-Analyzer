@@ -19,6 +19,7 @@ function App() {
         <Route path="/analysis" element={<AnalysisMenu/>}></Route>
         <Route path='/bar' element={<AnalysisBar/>}> </Route>
         <Route path='/pie' element={<AnalysisPie/>}> </Route>
+        <Route path='/clustering' element={<AnalysisClustering/>}> </Route>
         <Route path='*' element={<Home/>}></Route>
       </Route>
       <Route path="/login" element={<Login/>}></Route>

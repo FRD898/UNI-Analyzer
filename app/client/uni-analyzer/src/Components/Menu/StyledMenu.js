@@ -5,7 +5,7 @@ import {Box,
 import { NavLink } from "react-router-dom";
 const CustomMenuContainer = styled(Box)(({theme})=>({
     width:"300px",
-    height:"100vh",
+    height:"100%",
     borderRight: `4px solid ${theme.palette.secondary.main}`,
     background: theme.palette.primary.main,
     display: "flex",
@@ -35,6 +35,8 @@ const CustomUserInfo = styled(Box)(({theme})=>({
     color: theme.palette.text.primary,
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
+    padding: "30px"
 }));
 
 const CustomUserName = styled(Box)(({theme})=>({
@@ -44,7 +46,11 @@ const CustomUserName = styled(Box)(({theme})=>({
     "&:hover": {
         color: theme.palette.secondary.dark,
         cursor: "pointer",
-    }
+    }, 
+    margin: "10px",
 }));
 
-export {CustomMenuContainer, CustomListNav, CustomNavLink, CustomUserInfo,CustomUserName} 
+
+export {CustomMenuContainer, CustomListNav, 
+    CustomNavLink, CustomUserInfo,
+    CustomUserName} 

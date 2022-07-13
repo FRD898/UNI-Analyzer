@@ -99,24 +99,25 @@ const CustomLink = styled('a')(({theme})=>({
 const CustomPageContainer = styled(Paper)(({theme})=>({
     display: "flex",
     width: "100%",
-    height: "auto",
+    height: "100vh",
     textAlign: "center",
 }));
 
 const CustomCardContainer = styled(Paper)(({theme})=>({
     background: theme.palette.primary.main,
     width: "auto",
-    height: "460px",
+    height: "400px",
     borderRadius: "16px",
     border: `solid 4px ${theme.palette.secondary.main}`,
     padding: "30px",
-    margin: "20px",
+    margin: "0px 20px",
     color: theme.palette.secondary.main,
     "&:hover":{
         'cursor':"pointer",
         border: `solid 6px white`,
     }
 }));
+
 export {CustomButton, CustomContainer, CustomForm, CustomFormContainer, CustomInput, CustomLabel,
     CustomLink, CustomLogo, CustomSubtitle, CustomTitle, CustomPageContainer, CustomCardContainer,
 }
