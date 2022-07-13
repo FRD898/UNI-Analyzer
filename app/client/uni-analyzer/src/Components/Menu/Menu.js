@@ -16,6 +16,9 @@ export default function Menu(){
           fontWeight: isActive ? "bold  ": "",
         };
     }
+    const handleLogOut = ()=>{
+        window.alert("Log out")
+    }
     return (
         <ThemeProvider theme={theme}>
             <CustomMenuContainer>
@@ -39,7 +42,7 @@ export default function Menu(){
                     <AccountCircleOutlinedIcon sx={{fontSize: 50}}></AccountCircleOutlinedIcon>
                     <CustomUserName>Freider Achic</CustomUserName>
                 </CustomUserInfo>
-                <CustomUserName>Log Out</CustomUserName>
+                <CustomUserName onClick={handleLogOut}>Log Out</CustomUserName>
                 <CustomLink href="/login">
                     About us
                 </CustomLink>

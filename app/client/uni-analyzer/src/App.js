@@ -2,7 +2,7 @@ import './App.css';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import { Route, Routes } from 'react-router-dom';
-import PredecirAlumno from './Components/PredecirAlumno/PredecirAlumno';
+import Prediction from './Components/Prediction/Prediction';
 import HomeLayout from './Components/Home/HomeLayout';
 import AnalysisClustering from './Components/Analize/AnalysisClustering';
 import AnalysisBar from "./Components/Analize/AnalysisBar";
@@ -14,7 +14,7 @@ function App() {
     <Routes>
       <Route element={<HomeLayout/>}>
         <Route path="/" element={<Home/>}></Route>
-        <Route path="/prediction" element={<PredecirAlumno/>}></Route>
+        <Route path="/prediction" element={<Prediction/>}></Route>
         <Route path="/form" element={<Form/>}></Route>
         <Route path="/analysis" element={<AnalysisMenu/>}></Route>
         <Route path='/bar' element={<AnalysisBar/>}> </Route>
