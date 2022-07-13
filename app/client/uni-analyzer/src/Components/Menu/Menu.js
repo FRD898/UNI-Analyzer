@@ -22,16 +22,16 @@ export default function Menu(){
                 <CustomLogo alt="logo Universidad Nacional de Ingenieria" src={logoUni}/>
                 <CustomSubtitle>Herramientas </CustomSubtitle>
                 <CustomListNav>
-                    <CustomNavLink to={'/predecir'} style={activeLink}>
+                    <CustomNavLink to={'/prediction'} style={activeLink}>
                         Predecir
                     </CustomNavLink>
-                    <CustomNavLink to={'/analizar'} style={activeLink}>
+                    <CustomNavLink to={'/analysis'} style={activeLink}>
                         Analizar
                     </CustomNavLink>
-                    <CustomNavLink to={'/encuesta'} style={activeLink}>
+                    <CustomNavLink to={'/form'} style={activeLink}>
                         Encuesta
                     </CustomNavLink>
-                    <CustomNavLink to={'/salones'} style={activeLink}>
+                    <CustomNavLink to={'/classes'} style={activeLink}>
                         Salones
                     </CustomNavLink>
                 </CustomListNav>

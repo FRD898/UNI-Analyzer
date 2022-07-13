@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@mui/material/styles";
 import { CustomPageContainer, CustomTitle } from "../CustomStyles/CustomComponents";
 import { theme } from "../theme";
-export default function Encuesta(){
+export default function Form(){
     return (
         <ThemeProvider theme={theme}>
             <CustomPageContainer>

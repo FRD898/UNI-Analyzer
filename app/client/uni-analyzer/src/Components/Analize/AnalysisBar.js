@@ -1,8 +1,8 @@
-export default function AnalizarCircular(){
+export default function AnalysisBar(){
     return (
         <div>
             <h1>
-                Analizar Circular
+                Analizar Barras
             </h1>
         </div>
 

@@ -1,4 +1,4 @@
-export default function AnalizarClustering(){
+export default function AnalysisClustering(){
     return (
         <div>
             <h1>

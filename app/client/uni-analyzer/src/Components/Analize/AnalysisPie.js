@@ -1,8 +1,8 @@
-export default function AnalizarBarras(){
+export default function AnalysisPie(){
     return (
         <div>
             <h1>
-                Analizar Barras
+                Analizar Circular
             </h1>
         </div>
 
