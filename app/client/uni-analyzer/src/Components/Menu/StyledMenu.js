@@ -5,7 +5,7 @@ import {Box,
 import { NavLink } from "react-router-dom";
 const CustomMenuContainer = styled(Box)(({theme})=>({
     width:"300px",
-    height:"100%",
+    height:"auto",
     borderRight: `4px solid ${theme.palette.secondary.main}`,
     background: theme.palette.primary.main,
     display: "flex",

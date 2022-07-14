@@ -99,7 +99,7 @@ const CustomLink = styled('a')(({theme})=>({
 const CustomPageContainer = styled(Paper)(({theme})=>({
     display: "flex",
     width: "100%",
-    height: "100vh",
+    minHeight: "100vh",
     textAlign: "center",
 }));
 
