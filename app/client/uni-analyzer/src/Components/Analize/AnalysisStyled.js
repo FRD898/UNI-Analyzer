@@ -14,6 +14,8 @@ const CustomAnalysisPageContainer = styled(Paper)(({theme})=>({
 
 const CustomImageAnalysis = styled('img')(({theme})=>({
     borderRadius: "18px",
+    width: "auto",
+    height: "200px"
 }));
 
 export {CustomCardsContainer,CustomAnalysisPageContainer, CustomImageAnalysis}

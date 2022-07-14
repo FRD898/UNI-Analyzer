@@ -9,6 +9,10 @@ import { CustomAnalysisPageContainer,
     CustomCardsContainer,
     CustomImageAnalysis } from "./AnalysisStyled";
 import { Link } from "react-router-dom";
+import BarChart from "../../Images/Bar.jpg"
+import ClusterChart from "../../Images/Clustering.jpg"
+import PieChart from "../../Images/pie.jpg"
+
 export default function AnalysisMenu(){
     return (
         <ThemeProvider theme={theme}>
@@ -21,24 +25,25 @@ export default function AnalysisMenu(){
                         <Link style={{textDecoration: 'none'}} to={"/clustering"}>
                             <CustomCardContainer>
                                 <CustomSubtitle>Clustering</CustomSubtitle>
-                                <CustomImageAnalysis alt="Card image"></CustomImageAnalysis>
-                                <p>Esta herramienta permite agrupar alumnos en base a una característica común</p>
+                                <CustomImageAnalysis src={ClusterChart} alt="Card image"></CustomImageAnalysis>
+                                <p>Esta herramienta permite agrupar alumnos en base a una característica común.</p>
                             </CustomCardContainer>
                         </Link>
                         <Link style={{textDecoration: 'none'}} to={"/bar"}>
                             <CustomCardContainer>
                                 <CustomSubtitle>Barras</CustomSubtitle>
-                                <p>Esta herramienta permite agrupar alumnos en base a una característica común</p>
+                                <CustomImageAnalysis src={BarChart} alt="Card image"></CustomImageAnalysis>
+                                <p>Esta herramienta permite analizar en base a dos atributos.</p>
                             </CustomCardContainer>
                         </Link>
                         <Link style={{textDecoration: 'none'}} to={"/pie"}>
                             <CustomCardContainer>
                                 <CustomSubtitle>Circular</CustomSubtitle>
+                                <CustomImageAnalysis src={PieChart} alt="Card image"></CustomImageAnalysis>
                                 <p>Esta herramienta permite agrupar alumnos en base a una característica común</p>
                             </CustomCardContainer>
                         </Link>
                     </CustomCardsContainer>
-                    
                 </CustomAnalysisPageContainer>
             </CustomPageContainer>
         </ThemeProvider>
