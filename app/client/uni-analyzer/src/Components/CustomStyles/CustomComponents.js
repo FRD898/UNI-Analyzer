@@ -6,7 +6,7 @@ import {Button,
     InputAdornment,
     FormControl,
     FormGroup} from "@mui/material/";
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import {styled } from '@mui/material/styles';
 
 import pabellon from "../../Images/UNI-pabellon.jpg";
 

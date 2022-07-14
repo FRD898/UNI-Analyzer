@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react"
-import { theme } from "../theme"
+import { theme } from "../../theme"
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Table from '@mui/material/Table';
@@ -9,7 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import Checkbox from '@mui/material/Checkbox';
-import { CustomTableContainer } from "./PredictionStyled";
+import { CustomTableContainer } from "../PredictionStyled";
 import EnhancedTableHead from "./EnhancedTableHead";
 import EnhancedTableToolbar from "./EnhancedTableToolbar";
 

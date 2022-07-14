@@ -18,10 +18,10 @@ const CustomPredictionOptionContainer = styled(Box)(({theme})=>({
     alignItems: "flex-start",
 }));
 const CustomPredictionInputContainer = styled(Paper)(({theme})=>({
-    border: `solid 6px ${theme.palette.primary.main}`,
+    border: `solid 4px ${theme.palette.primary.main}`,
     background: "white",
     height: "100%",
-    borderRadius: "4px",
+    borderRadius: "6px",
     padding: "20px 40px",
 }));
 
