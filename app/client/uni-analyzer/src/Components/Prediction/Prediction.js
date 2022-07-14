@@ -2,7 +2,11 @@ import { ThemeProvider } from "@emotion/react";
 import { Button } from "@mui/material";
 import { CustomButton, CustomInput, CustomPageContainer, CustomTitle } from "../CustomStyles/CustomComponents";
 import { theme } from "../theme";
-import { CustomPredictionFormContainer, CustomPredictionInputContainer, CustomPredictionOptionContainer, CustomPredictionPageContainer, CustomSearchInputContainer } from "./PredectionStyled";
+import { CustomPredictionFormContainer, 
+    CustomPredictionInputContainer, 
+    CustomPredictionOptionContainer, 
+    CustomPredictionPageContainer, 
+    CustomSearchInputContainer } from "./PredictionStyled";
 import SearchIcon from '@mui/icons-material/Search';
 import TablePrediction from "./TablePrediction";
 import { useState } from "react";

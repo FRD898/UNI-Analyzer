@@ -3,7 +3,7 @@ import {Paper,Box} from "@mui/material/";
 const CustomPredictionPageContainer = styled(Paper)(({theme})=>({
     width: "100%",
     height: "auto",
-    padding: "40px 40px",
+    padding: "0px 60px",
 }))
 const CustomPredictionFormContainer = styled(Box)(({theme})=>({
     border: `solid 6px ${theme.palette.secondary.main}`,

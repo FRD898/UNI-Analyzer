@@ -9,7 +9,7 @@ const CustomCardsContainer = styled(Box)(({theme})=>({
 const CustomAnalysisPageContainer = styled(Paper)(({theme})=>({
     width: "100%",
     height: "auto",
-    padding: "40px 40px",
+    padding: "0px 40px",
 }));
 
 const CustomImageAnalysis = styled('img')(({theme})=>({

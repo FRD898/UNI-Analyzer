@@ -10,8 +10,8 @@ const CustomMenuContainer = styled(Box)(({theme})=>({
     background: theme.palette.primary.main,
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
     alignItems: "center",
+    paddingTop: "90px"
 }));
 
 const CustomListNav = styled('nav')(({theme})=>({
