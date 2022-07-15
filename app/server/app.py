@@ -7,9 +7,16 @@ import numpy as np
 from prediction import prediction as pr
 import io
 import json
+from routes.routes import blueprint
+
 
 app = Flask(__name__)
+app.config.from_object('config')
 CORS(app)
+
+app.register_blueprint(blueprint, url_prefix="/")
+
+
 model = pickle.load(open("./prediction/svm.sav", 'rb'))
 #result = model.predict([np.array([0,5,5,0])])
 #print(result)
@@ -30,7 +37,7 @@ def convertDataFrame(frontData):
 
     df = pd.DataFrame.from_dict(dict)
     return df
-
+'''
 @app.route('/')
 def home():
     return jsonify("Hola mundo")
@@ -61,7 +68,7 @@ def searchDocs():
         "real": real
 
     }
-    return jsonify(res)
+    return jsonify(res)'''
 
 
 

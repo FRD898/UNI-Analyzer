@@ -1,4 +1,4 @@
 app/client/uni-analyzer/node_modules/
 app/server/node_modules/
 app/server/venv/
-app/server/prediction/__pycache__
+__pycache__/
