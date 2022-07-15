@@ -10,7 +10,7 @@ import json
 
 app = Flask(__name__)
 CORS(app)
-model = pickle.load(open("./models/svm.sav", 'rb'))
+model = pickle.load(open("./prediction/svm.sav", 'rb'))
 #result = model.predict([np.array([0,5,5,0])])
 #print(result)
 def convertDataFrame(frontData):
@@ -30,6 +30,10 @@ def convertDataFrame(frontData):
 
     df = pd.DataFrame.from_dict(dict)
     return df
+
+@app.route('/')
+def home():
+    return jsonify("Hola mundo")
 
 @app.route('/search')
 def searchDocs():

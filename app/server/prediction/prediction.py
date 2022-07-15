@@ -112,7 +112,7 @@ def prepareData(data):
   return df
 
 def Cargar(name):
-    return pickle.load(open(f"./models/{name}.sav", 'rb'))
+    return pickle.load(open(f"./{name}.sav", 'rb'))
 
 def Predict(data, model):
     model_loaded = Cargar(model)
