@@ -8,14 +8,21 @@ from prediction import prediction as pr
 import io
 import json
 from routes.routes import blueprint
-
+from database import mongo
 
 app = Flask(__name__)
 app.config.from_object('config')
 CORS(app)
+mongo.init_app(app)
 
 app.register_blueprint(blueprint, url_prefix="/")
 
+
+
+@app.route("/add_one")
+def add_one():
+    db.users.insert_one({'title': "todo title", 'body': "todo body"})
+    return jsonify(message="success")
 
 model = pickle.load(open("./prediction/svm.sav", 'rb'))
 #result = model.predict([np.array([0,5,5,0])])
