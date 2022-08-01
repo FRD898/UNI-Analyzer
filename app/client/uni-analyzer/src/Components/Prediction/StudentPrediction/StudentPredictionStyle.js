@@ -1,4 +1,4 @@
-import { Box, FormGroup, Grid, Typography } from '@mui/material';
+import { Box, FormGroup, Grid, TextField, Typography } from '@mui/material';
 import {styled } from '@mui/material/styles';
 const CustomFormPrediction = styled(FormGroup)(({theme})=>({
     background: theme.palette.background.paper,
@@ -27,6 +27,10 @@ const CustomStandardLabel = styled(Typography)(({theme}) =>({
 
 }));
 
+const CustomInputNumber = styled(TextField)(({theme})=>({
+
+}));
+
 export {CustomFormPrediction,CustomStudentDataContainer,
 CustomCheckboxInputContainer, CustomAttributesContainer,
-CustomModelsContainer, CustomStandardLabel as CustomStandardLabel}
+CustomModelsContainer, CustomStandardLabel, CustomInputNumber}

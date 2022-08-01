@@ -1,9 +1,8 @@
 #from app import db
-from flask_pymongo import PyMongo
 from database import mongo
 
 
-def insertUser():
+def createUser():
     try:
         mongo.db.users.insert_one({'email': "fachicc@uni.pe", 'password': "admin"})
     except:
@@ -11,9 +10,14 @@ def insertUser():
 
 def authenticate(email,password):
     try:
-        res=mongo.db.users.find({'email':email, 'password':password})
-        #print(len(res))
-        for entry in res:
-            print(entry)
+        res=mongo.db.users.find_one({'email':email, 'password':password})
+        return res
+        
+    except:
+        print("error in authenticate")
+
+def addNewStudent(student):
+    try:
+        res=mongo.db.students.insert_one(student)
     except:
         print("error in authenticate")
