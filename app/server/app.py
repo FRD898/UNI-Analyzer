@@ -4,7 +4,6 @@ import pickle
 from sklearn import svm
 import pandas as pd
 import numpy as np
-from prediction import prediction as pr
 import io
 import json
 from routes.routes import blueprint
@@ -24,26 +23,9 @@ def add_one():
     db.users.insert_one({'title': "todo title", 'body': "todo body"})
     return jsonify(message="success")
 
-model = pickle.load(open("./prediction/svm.sav", 'rb'))
+
 #result = model.predict([np.array([0,5,5,0])])
 #print(result)
-def convertDataFrame(frontData):
-    '''
-        Recibe una lista de filas(listas) 
-    '''
-    data = json.loads(frontData)
-    columnas = data[0]
-
-    dict = {}
-    for i in columnas[1:]:
-        dict[str(i)] = []
-
-    for row in data[1:]:
-        for name,col in zip(columnas[1:],row[1:]):
-            dict[name].append(col)
-
-    df = pd.DataFrame.from_dict(dict)
-    return df
 '''
 @app.route('/')
 def home():
