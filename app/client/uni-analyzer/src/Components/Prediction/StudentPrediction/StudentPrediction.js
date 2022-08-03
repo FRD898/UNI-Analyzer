@@ -1,13 +1,12 @@
 import { ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
-import { CustomAttributesContainer, CustomCheckboxInputContainer,
-    CustomFormPrediction, CustomModelsContainer,
-    CustomStandardLabel, CustomStudentDataContainer,
-    CustomInputNumber } from "./StudentPredictionStyle";
+import { CustomFormPrediction,
+    CustomStandardLabel, CustomInputNumber, CustomGridContainer } from "./StudentPredictionStyle";
 import { theme } from "../../theme";
 import { CustomButton, CustomInput } from '../../CustomStyles/CustomComponents';
 import { Checkbox, Grid } from '@mui/material';
 import { predictStudentPerformance } from '../../../Services/StudentService';
+import ResponsiveDialog from "../../Dialog/ResponsiveDialog"
 
 const Questions = [{
         id: 0,
@@ -53,10 +52,10 @@ export default function StudentPrediction(){
         'name':"",
         'code':"",
         'answers':[0,0,0,0,0,0],
-        'predictor':'',
         'class':'',
     })
-    const [predictor, setPredictor] = useState("")
+    const [predictor, setPredictor] = useState("");
+    const [showDialog, setShowDialog] = useState(false);
 
     const isEmpty = (par)=>{return par===""? true: false}
     const validateForm = ()=>{
@@ -77,14 +76,13 @@ export default function StudentPrediction(){
     const handlePredictionStudent = (e)=>{
         e.preventDefault();
         if(validateForm()){
-            predictStudentPerformance(student).then(
+            predictStudentPerformance(student,predictor).then(
                 (res)=>{
                     res===null?
                     window.alert("Se presentó un error"):
-                    window.alert(res)
+                    setShowDialog(true)
                 }
             )
-            
         }
     }
     const handleChange = (e,type)=>{
@@ -97,14 +95,11 @@ export default function StudentPrediction(){
 
     const handleModelSelection = (e,model)=>{
         if(e.target.checked && model=='svc'){
-            setStudent({... student, 'predictor':'svc'})
             setPredictor('svc')
         }
         else if(e.target.checked && model=='rfc'){
-            setStudent({... student, 'predictor':'rfc'})
             setPredictor('rfc')
         }else{
-            setStudent({... student, 'predictor':''})
             setPredictor('')
         }
     }
@@ -140,12 +135,13 @@ export default function StudentPrediction(){
 
         return(
             <Grid key={question.id} container>
-                <Grid item xs={8}>
+                <Grid item xs={8} textAlign="left">
                     <CustomStandardLabel>{question.question}</CustomStandardLabel>
                 </Grid>
                 <Grid item xs={4}>
                     {question.type==="mark" || question.type==="percentage"?
                     <CustomInputNumber
+                    size='small'
                     value={student.answers[question.id]}
                     className={question.id}
                     type="number"
@@ -161,36 +157,41 @@ export default function StudentPrediction(){
 
     return(
         <ThemeProvider theme={theme}>
+            {
+                showDialog?
+                <ResponsiveDialog text={"Hola"} show={showDialog}/>:
+                null
+            }
             <CustomFormPrediction onSubmit={handlePredictionStudent}>
-                <CustomStudentDataContainer container spacing={2}>
-                    <Grid item>
+                <CustomGridContainer container spacing={2}>
+                    <Grid item xs={1}>
                         <CustomStandardLabel >Nombre</CustomStandardLabel>
                     </Grid>
                     <Grid item>
-                        <CustomInput className='name' value={student.name} onChange={(e)=>handleChange(e,'name')}></CustomInput>
+                        <CustomInput size="small" className='name' value={student.name} onChange={(e)=>handleChange(e,'name')}></CustomInput>
                     </Grid>
-                </CustomStudentDataContainer>
-                <CustomStudentDataContainer container spacing={2}>
-                    <Grid item>
+                </CustomGridContainer>
+                <CustomGridContainer container spacing={2}>
+                    <Grid item xs={1}>
                         <CustomStandardLabel>Código</CustomStandardLabel>
                     </Grid>
                     <Grid item>
-                        <CustomInput className='code' value={student.code} onChange={(e)=>handleChange(e,'code')}></CustomInput>
+                        <CustomInput size="small" className='code' value={student.code} onChange={(e)=>handleChange(e,'code')}></CustomInput>
                     </Grid>
-                </CustomStudentDataContainer>
-                <CustomStudentDataContainer container spacing={2}>
-                    <Grid item>
+                </CustomGridContainer>
+                <CustomGridContainer container spacing={2}>
+                    <Grid item xs={1}>
                         <CustomStandardLabel>Salón</CustomStandardLabel>
                     </Grid>
                     <Grid item>
-                        <CustomInput className='class' value={student.class} onChange={(e)=>handleChange(e,'class')}></CustomInput>
+                        <CustomInput size="small" className='class' value={student.class} onChange={(e)=>handleChange(e,'class')}></CustomInput>
                     </Grid>
-                </CustomStudentDataContainer>
-                <CustomCheckboxInputContainer container direction="row">
-                    <CustomAttributesContainer item xs={6}>
+                </CustomGridContainer>
+                <CustomGridContainer container direction="row">
+                    <Grid item xs={6}>
                         {Questions.map(q => renderQuestion(q))}
-                    </CustomAttributesContainer>
-                    <CustomModelsContainer item xs={6}>
+                    </Grid>
+                    <Grid item xs={6}>
                         <Grid><CustomStandardLabel>
                             Modelo
                         </CustomStandardLabel></Grid>
@@ -210,8 +211,8 @@ export default function StudentPrediction(){
                                 />
                             </Grid>
                         </Grid>
-                    </CustomModelsContainer>
-                </CustomCheckboxInputContainer>
+                    </Grid>
+                </CustomGridContainer>
                 <CustomButton variant='contained' onClick={handlePredictionStudent}>Predecir</CustomButton>
             </CustomFormPrediction>
         </ThemeProvider>

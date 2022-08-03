@@ -17,8 +17,16 @@ export default async function Post(route,data){
     
     return res;
 }
-const predictStudentPerformance = (user)=>{
-    return Post('/predict/student',user).then(
+const predictStudentPerformance = (student,predictor)=>{
+    return Post('/predict/student',
+    {
+        "user_name":"Freider Achic",
+        "email":"fachicc@uni.pe",
+        "password":"admin123",
+        "predictor": predictor,
+        'student':student,
+    }
+    ).then(
         (res)=>{
         if(res===null)
             return null

@@ -2,35 +2,23 @@ import { Box, FormGroup, Grid, TextField, Typography } from '@mui/material';
 import {styled } from '@mui/material/styles';
 const CustomFormPrediction = styled(FormGroup)(({theme})=>({
     background: theme.palette.background.paper,
-    padding: "10px",
+    padding: "20px 40px",
     display: "flex",
     alignItems: "center",
 }));
 
-const CustomStudentDataContainer = styled(Grid)(({theme})=>({
-
-}));
-
-const CustomCheckboxInputContainer = styled(Grid)(({theme})=>({
-
-}));
-
-const CustomAttributesContainer = styled(Grid)(({theme})=>({
-
-}));
-
-const CustomModelsContainer = styled(Grid)(({theme})=>({
-
-}));
+const CustomGridContainer = styled(Grid)(({theme})=>({
+    paddingTop:"0",
+    alignItems:"center",
+}))
 
 const CustomStandardLabel = styled(Typography)(({theme}) =>({
 
 }));
 
 const CustomInputNumber = styled(TextField)(({theme})=>({
-
+    marginBottom:"4px",
+    marginTop: "0px",
 }));
 
-export {CustomFormPrediction,CustomStudentDataContainer,
-CustomCheckboxInputContainer, CustomAttributesContainer,
-CustomModelsContainer, CustomStandardLabel, CustomInputNumber}
+export {CustomFormPrediction,CustomStandardLabel, CustomInputNumber, CustomGridContainer}
