@@ -2,7 +2,7 @@ import axios from "axios";
 const baseURL = "https://uni-analyzer.herokuapp.com"
 async function Post(route,data){
     var res;
-    await axios.post(baseURL.concat(route),data)
+    await axios.post("https://uni-analyzer.herokuapp.com/predict/student",data)
     .then((response)=>{
         if(response.status == 200){
             res = response.data.response
@@ -19,7 +19,7 @@ async function Post(route,data){
 
 async function Get(route,data){
     var res;
-    await axios.get(baseURL.concat(route),data)
+    await axios.get(baseURL+route,data)
     .then((response)=>{
         if(response.status == 200){
             res = response.data
