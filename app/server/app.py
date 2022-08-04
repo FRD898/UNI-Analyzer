@@ -10,7 +10,7 @@ from routes.routes import blueprint
 from database import mongo
 
 app = Flask(__name__)
-app.config.from_object('config')
+app.config.from_object('config.DevelopmentConfig')
 CORS(app)
 mongo.init_app(app)
 
