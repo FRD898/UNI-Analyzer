@@ -10,13 +10,19 @@ from routes.routes import blueprint
 from database import mongo
 
 app = Flask(__name__)
-app.config.from_object('config.DevelopmentConfig')
+if app.config['ENV']=="production":
+    app.config.from_object('config.ProductionConfig')
+elif app.config['ENV']=="production":
+    app.config.from_object('config.TestingConfig')
+else:
+    app.config.from_object('config.DevelopmentConfig')
+
 CORS(app)
 mongo.init_app(app)
 
 app.register_blueprint(blueprint, url_prefix="/")
 
-
+print(app.config['ENV'])
 
 @app.route("/add_one")
 def add_one():
