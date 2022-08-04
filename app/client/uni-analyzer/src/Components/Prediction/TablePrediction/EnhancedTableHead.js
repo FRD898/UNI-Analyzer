@@ -21,37 +21,37 @@ const headCells = [
       label: 'Código',
     },
     {
-      id: 'residence',
+      id: 'q1',
       numeric: true,
       disablePadding: false,
       label: '1',
     },
     {
-      id: 'absence',
+      id: 'q2',
       numeric: true,
       disablePadding: false,
       label: '2',
     },
     {
-      id: 'pc1',
+      id: 'q3',
       numeric: false,
       disablePadding: false,
       label: '3',
     },
     {
-      id: 'tasks',
+      id: 'q4',
       numeric: false,
       disablePadding: false,
       label: '4',
     },
     {
-      id: 'meanPcs',
+      id: 'q5',
       numeric: true,
       disablePadding: false,
       label: '5',
     },
     {
-      id: 'middle',
+      id: 'q6',
       numeric: true,
       disablePadding: false,
       label: '6',
@@ -69,7 +69,7 @@ const headCells = [
       label: 'Aprueba',
     },
     {
-      id: 'finalMark',
+      id: 'mark_prediction',
       numeric: true,
       disablePadding: false,
       label: 'Nota final',
@@ -82,7 +82,6 @@ export default function EnhancedTableHead(props) {
     const createSortHandler = (property) => (event) => {
       onRequestSort(event, property);
     };
-  
     return (
       <TableHead>
         <TableRow>
@@ -93,7 +92,7 @@ export default function EnhancedTableHead(props) {
               checked={rowCount > 0 && numSelected === rowCount}
               onChange={onSelectAllClick}
               inputProps={{
-                'aria-label': 'select all desserts',
+                'aria-label': 'select all',
               }}
             />
           </TableCell>
@@ -123,4 +122,3 @@ export default function EnhancedTableHead(props) {
       </TableHead>
     );
   }
-  

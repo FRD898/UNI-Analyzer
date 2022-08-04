@@ -12,7 +12,7 @@ import { CustomInputSearch } from "./CustomClassPredictionStyle";
 
 
 export default function ClassPrediction(){
-    const [state, setState] = useState({'room':{},'options':[],'classrooms':[]});
+    const [state, setState] = useState({'loaded':false,'room':{},'options':[],'classrooms':[]});
     useEffect(()=>{
         console.log("renderizado")
         getClassrooms().then(
@@ -27,6 +27,7 @@ export default function ClassPrediction(){
                     })
                 }
                 setState({...state,
+                    'loaded':true,
                     'room':options[0],
                     'options':options,
                     'classrooms':res
@@ -51,7 +52,6 @@ export default function ClassPrediction(){
                 sx={{ width: 300 }}
                 value={state['room']}
                 onChange={(event, newValue) => {
-                console.log(newValue);
                 setState({
                     ...state,
                     'room':newValue
@@ -61,23 +61,19 @@ export default function ClassPrediction(){
                 getOptionLabel={(option) => option.label || ""}
                 isOptionEqualToValue={(option, value) => option.id === value.id}
                 renderInput={(params) =>
-                    <CustomInputSearch {...params} label="Salones"
+                    <CustomInputSearch {...params} label="Salón"
                     InputLabelProps={{
-                        style: { color: '#303030'},
+                        style: { color: '#303030', fontWeight: "bold"},
                     }}
                     sx={{ input: { color: theme.palette.primary.main, } }}
                     />
                     }
                 />
-                <SearchIcon  sx={{ color: theme.palette.primary.main,
-                    fontSize: "30px",
-                    "&:hover": {cursor:'pointer',
-                    color: theme.palette.primary.dark},
-                    }}
-                    onClick={handleSearchClassroom}
-                    ></SearchIcon>
+                
             </CustomSearchInputContainer>
-            <TablePrediction ></TablePrediction>
+            {
+                state.loaded?<TablePrediction  students={state.classrooms[state.room.id].students} room={state.room.label} />:null
+            }
         </ThemeProvider>
     )
 }

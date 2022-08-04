@@ -18,7 +18,7 @@ const login= (student,predictor)=>{
     )
 }
 
-const getClassrooms= ()=>{
+async function getClassrooms(){
     const body={
         "headers":{
         },

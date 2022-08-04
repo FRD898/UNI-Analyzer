@@ -49,45 +49,19 @@ numSelected: PropTypes.number.isRequired,
 
 
 export default function TablePrediction(props){
-    const rows = [{
-        "answers": [
-            0,
-            1,
-            0,
-            0,
-            1,
-            1
-        ],
-        "class": "BC2",
-        "code": "20161345D",
-        "mark_prediction": 2.5,
-        "name": "Freider6",
-        "prediction": 0.0,
-        "predictor": "rfc"
-    },
-    {
-        "answers": [
-            0,
-            1,
-            0,
-            0,
-            1,
-            1
-        ],
-        "class": "BC2",
-        "code": "20161345D",
-        "mark_prediction": 2.5,
-        "name": "Freider7",
-        "prediction": 0.0,
-        "predictor": "rfc"
+    const rows = []
+    for(const student of props.students){
+        var r = {...student}
+        for(const [i,answer] of student.answers.entries()){
+            r[`q${i+1}`]=answer
+        }
+        rows.push(r)
     }
-]
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('prediction');
     const [selected, setSelected] = React.useState([]);
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
-    const [classroom, setClassroom] = React.useState("CC01");
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -142,7 +116,7 @@ export default function TablePrediction(props){
     return(
         <ThemeProvider theme={theme}>
             <CustomTableContainer>
-                <EnhancedTableToolbar numSelected={selected.length} />
+                <EnhancedTableToolbar numSelected={selected.length} room={props.room} />
                 <Typography>
                     0:Reside en Lima?
                     1:Porcentaje de faltas
@@ -202,7 +176,7 @@ export default function TablePrediction(props){
                                     {row.name}
                                 </TableCell>
                                 <TableCell align="right">{row.code}</TableCell>
-                                <TableCell align="right">{row.answers[0]==0?"No":"Sí"}</TableCell>
+                                <TableCell id="test" align="right">{row.answers[0]==0?"No":"Sí"}</TableCell>
                                 <TableCell align="right">{row.answers[1]}</TableCell>
                                 <TableCell align="right">{row.answers[2]==0?"No":"Sí"}</TableCell>
                                 <TableCell align="right">{row.answers[3]==0?"No":"Sí"}</TableCell>

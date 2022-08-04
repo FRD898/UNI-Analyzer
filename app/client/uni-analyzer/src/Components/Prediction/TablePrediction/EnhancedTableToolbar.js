@@ -9,8 +9,8 @@ import { alpha } from '@mui/material/styles';
 
 
 export default function EnhancedTableToolbar(props){
+  console.log("-------------------",props)
     const { numSelected } = props;
-    const [classroom, setClassroom] = useState("CC01");
     return (
       <Toolbar
         sx={{
@@ -38,7 +38,7 @@ export default function EnhancedTableToolbar(props){
             id="tableTitle"
             component="div"
           >
-            Salón: {classroom}
+            Salón: {props.room}
           </Typography>
         )}
   

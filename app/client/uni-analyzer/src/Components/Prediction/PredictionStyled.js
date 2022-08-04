@@ -27,6 +27,7 @@ const CustomPredictionInputContainer = styled(Paper)(({theme})=>({
 }));
 
 const CustomSearchInputContainer = styled(Box)(({theme})=>({
+    marginBottom:"20px",
 }));
 
 const CustomTableContainer = styled(Paper)(({theme})=>({
