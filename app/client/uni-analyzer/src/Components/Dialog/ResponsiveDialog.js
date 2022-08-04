@@ -11,7 +11,6 @@ import { Typography } from '@mui/material';
 import { CustomButton } from '../CustomStyles/CustomComponents';
 
 export default function ResponsiveDialog(props) {
-console.log(props)
 const theme = useTheme();
 const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 

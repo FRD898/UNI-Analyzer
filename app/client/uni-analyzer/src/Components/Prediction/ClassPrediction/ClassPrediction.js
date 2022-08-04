@@ -14,13 +14,10 @@ import { CustomInputSearch } from "./CustomClassPredictionStyle";
 export default function ClassPrediction(){
     const [state, setState] = useState({'loaded':false,'room':{},'options':[],'classrooms':[]});
     useEffect(()=>{
-        console.log("renderizado")
         getClassrooms().then(
             (res)=>{
-                console.log("*************************",res)
                 var options = []
                 for(const [i,r] of res.entries()){
-                    console.log("iteraaaaaaaaaaaaaaaaaaaaaaaaaaaando")
                     options.push({
                         label:r.class_name,
                         id:i

@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = "http://localhost:4000"
+const baseURL = process.env.REACT_APP_SERVER
 async function Post(route,data){
     var res;
     await axios.post(baseURL+route,data)

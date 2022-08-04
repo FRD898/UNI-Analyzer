@@ -9,7 +9,6 @@ import { alpha } from '@mui/material/styles';
 
 
 export default function EnhancedTableToolbar(props){
-  console.log("-------------------",props)
     const { numSelected } = props;
     return (
       <Toolbar

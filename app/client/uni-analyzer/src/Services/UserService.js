@@ -31,7 +31,6 @@ async function getClassrooms(){
     return Get('/classrooms',body).
     then(
         (res)=>{
-            console.error(res)
             if(res===null)
                 return null
             else

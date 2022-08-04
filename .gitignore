@@ -2,4 +2,7 @@ app/client/uni-analyzer/node_modules/
 app/server/node_modules/
 app/server/venv/
 __pycache__/
+
+#Keys
 app/server/config.py
+.env
