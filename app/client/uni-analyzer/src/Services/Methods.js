@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = process.env.REACT_APP_SERVER
+const baseURL = "https://uni-analyzer.herokuapp.com"
 async function Post(route,data){
     var res;
     await axios.post(baseURL+route,data)
