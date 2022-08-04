@@ -14,5 +14,13 @@
     "Flask"
   ],
   "author": "Freider Achic-Cuenca <freider8998@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FRD898/UNI-Analyzer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FRD898/UNI-Analyzer/issues"
+  },
+  "homepage": "https://github.com/FRD898/UNI-Analyzer#readme"
 }
