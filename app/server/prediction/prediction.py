@@ -16,5 +16,5 @@ def predict(data, model):
   model_loaded = Load(model)
   featuresClas = [1,3,4,5] #23,28,37,38
   featuresReg = [0,2,3,4,5]#6,24,28,37,38
-  salida = model_loaded.predict([np.array(data)[featuresClas]])
+  salida = model_loaded.predict([np.array(data)[featuresClas]]) if model =='rfc' or model =="svc" else model_loaded.predict([np.array(data)[featuresReg]])
   return salida[0]

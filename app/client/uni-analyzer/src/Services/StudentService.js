@@ -1,22 +1,4 @@
-import axios from "axios";
-const baseURL = "http://localhost:4000"
-export default async function Post(route,data){
-    var res;
-    await axios.post(baseURL+route,data)
-    .then((response)=>{
-        if(response.status == 200){
-            res = response.data.response
-        }else{
-            res= null
-        }
-    })
-    .catch((error)=>{
-        console.error(error);
-        res = null;
-    })
-    
-    return res;
-}
+import {Post,Get} from "./Methods"
 const predictStudentPerformance = (student,predictor)=>{
     return Post('/predict/student',
     {
@@ -31,8 +13,11 @@ const predictStudentPerformance = (student,predictor)=>{
         if(res===null)
             return null
         else
-            return res===0?'No aprobará':"Aprobará"
+            return res.class===0?`No aprobará. Nota aprox:${res.reg}`:`Aprobará. Nota aprox:${res.reg}`
         }
     )
 }
+
+
+
 export {predictStudentPerformance}

@@ -38,15 +38,17 @@ def predictStudentPerformance():
 
             #user['classes'] = classrooms
             prediction = predict(student['answers'],predictor)
+            predictMark = round(predict(student['answers'],'lr')[0],1)
             if not existStudent:
                 student['prediction']=prediction
                 student['predictor']=predictor
+                student['mark_prediction']=predictMark
                 print("uptaded user")
                 if updateUser({'email':json['email'],'password':json['password']},{"$set":user})==None:
                     return jsonify({'status':500,'response':'Failed to update user'})
                 else:
-                    return jsonify({'status':200,'response':prediction})
+                    return jsonify({'status':200,'response':{'class':prediction,'reg':predictMark}})
             else:
-                return jsonify({'status':200,'response':prediction})
+                return jsonify({'status':200,'response':{'class':prediction,'reg':predictMark}})
     else:
         return 'Content-Type not supported!'

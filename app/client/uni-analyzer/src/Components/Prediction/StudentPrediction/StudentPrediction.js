@@ -55,7 +55,7 @@ export default function StudentPrediction(){
         'class':'',
     })
     const [predictor, setPredictor] = useState("");
-    const [showDialog, setShowDialog] = useState(false);
+    const [dialog, setDialog] = useState({'show':false, 'text':""});
 
     const isEmpty = (par)=>{return par===""? true: false}
     const validateForm = ()=>{
@@ -80,7 +80,7 @@ export default function StudentPrediction(){
                 (res)=>{
                     res===null?
                     window.alert("Se presentó un error"):
-                    setShowDialog(true)
+                    setDialog({'show':true,'text':res})
                 }
             )
         }
@@ -158,8 +158,8 @@ export default function StudentPrediction(){
     return(
         <ThemeProvider theme={theme}>
             {
-                showDialog?
-                <ResponsiveDialog text={"Hola"} show={showDialog}/>:
+                dialog.show?
+                <ResponsiveDialog text={dialog.text} show={dialog.show} setDialog={setDialog}/>:
                 null
             }
             <CustomFormPrediction onSubmit={handlePredictionStudent}>

@@ -15,17 +15,16 @@ import EnhancedTableToolbar from "./EnhancedTableToolbar";
 
 function createData(name, pc1, pc2, participation, tasks, middle, prediction) {
     return {
-      name,
-      pc1,
-      pc2,
-      participation,
-      tasks,
-      middle,
-      prediction
+        name,
+        pc1,
+        pc2,
+        participation,
+        tasks,
+        middle,
+        prediction
     };
-  }
-  
-  const rows = [
+}
+const rows = [
     createData('Cupcake', 305, 3.7, 67, 4, 61, 14),
     createData('Donut', 452, 25.0, 51, 4.9, 62, 14),
     createData('Eclair', 262, 16.0, 24, 6.0, 67, 4),
@@ -39,39 +38,39 @@ function createData(name, pc1, pc2, participation, tasks, middle, prediction) {
     createData('Marshmallow', 318, 0, 81, 2.0, 67, 4),
     createData('Nougat', 360, 19.0, 9, 37.0, 67, 4),
     createData('Oreo', 437, 18.0, 63, 4.0, 67, 4),
-  ];
-  
-  function descendingComparator(a, b, orderBy) {
-    if (b[orderBy] < a[orderBy]) {
-      return -1;
-    }
-    if (b[orderBy] > a[orderBy]) {
-      return 1;
-    }
-    return 0;
-  }
-  
-  function getComparator(order, orderBy) {
-    return order === 'desc'
-      ? (a, b) => descendingComparator(a, b, orderBy)
-      : (a, b) => -descendingComparator(a, b, orderBy);
-  }
-  
-  
-  
-  EnhancedTableHead.propTypes = {
-    numSelected: PropTypes.number.isRequired,
-    onRequestSort: PropTypes.func.isRequired,
-    onSelectAllClick: PropTypes.func.isRequired,
-    order: PropTypes.oneOf(['asc', 'desc']).isRequired,
-    orderBy: PropTypes.string.isRequired,
-    rowCount: PropTypes.number.isRequired,
-  };
-  
+];
 
-  EnhancedTableToolbar.propTypes = {
-    numSelected: PropTypes.number.isRequired,
-  };
+function descendingComparator(a, b, orderBy) {
+if (b[orderBy] < a[orderBy]) {
+    return -1;
+}
+if (b[orderBy] > a[orderBy]) {
+    return 1;
+}
+return 0;
+}
+
+function getComparator(order, orderBy) {
+return order === 'desc'
+    ? (a, b) => descendingComparator(a, b, orderBy)
+    : (a, b) => -descendingComparator(a, b, orderBy);
+}
+
+
+
+EnhancedTableHead.propTypes = {
+numSelected: PropTypes.number.isRequired,
+onRequestSort: PropTypes.func.isRequired,
+onSelectAllClick: PropTypes.func.isRequired,
+order: PropTypes.oneOf(['asc', 'desc']).isRequired,
+orderBy: PropTypes.string.isRequired,
+rowCount: PropTypes.number.isRequired,
+};
+
+
+EnhancedTableToolbar.propTypes = {
+numSelected: PropTypes.number.isRequired,
+};
 
 
 
@@ -197,7 +196,7 @@ export default function TablePrediction(){
                             })}
                         {emptyRows > 0 && (
                             <TableRow>
-                             <TableCell colSpan={6} />
+                                <TableCell colSpan={6} />
                             </TableRow>
                         )}
                         </TableBody>
