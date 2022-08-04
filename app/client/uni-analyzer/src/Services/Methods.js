@@ -1,8 +1,8 @@
 import axios from "axios";
-const baseURL = "https://uni-analyzer.herokuapp.com"
+const baseURL = process.env.REACT_APP_SERVER
 async function Post(route,data){
     var res;
-    await axios.post("https://uni-analyzer.herokuapp.com/predict/student",data)
+    await axios.post(baseURL + route,data)
     .then((response)=>{
         if(response.status == 200){
             res = response.data.response
