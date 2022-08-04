@@ -65,6 +65,7 @@ export default function ClassPrediction(){
                     InputLabelProps={{
                         style: { color: '#303030'},
                     }}
+                    sx={{ input: { color: theme.palette.primary.main, } }}
                     />
                     }
                 />
@@ -76,7 +77,7 @@ export default function ClassPrediction(){
                     onClick={handleSearchClassroom}
                     ></SearchIcon>
             </CustomSearchInputContainer>
-            <TablePrediction></TablePrediction>
+            <TablePrediction ></TablePrediction>
         </ThemeProvider>
     )
 }

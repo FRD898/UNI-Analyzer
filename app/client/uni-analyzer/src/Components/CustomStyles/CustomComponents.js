@@ -5,7 +5,8 @@ import {Button,
     InputLabel,
     InputAdornment,
     FormControl,
-    FormGroup} from "@mui/material/";
+    FormGroup,
+    Grid} from "@mui/material/";
 import {styled } from '@mui/material/styles';
 
 import pabellon from "../../Images/UNI-pabellon.jpg";
@@ -96,11 +97,23 @@ const CustomLink = styled('a')(({theme})=>({
     }
 }))
 
+
+const CustomHomePageContainer = styled(Grid)(({theme})=>({
+    display: "flex",
+    width: "100%",
+    maxWidth: "100vw",
+    minHeight: "100vh",
+    height: "100%",
+    textAlign: "center",
+    margin:0,
+}));
+
 const CustomPageContainer = styled(Paper)(({theme})=>({
     display: "flex",
     width: "100%",
-    minHeight: "100vh",
+    height: "100%",
     textAlign: "center",
+    margin:0,
 }));
 
 const CustomCardContainer = styled(Paper)(({theme})=>({
@@ -119,5 +132,6 @@ const CustomCardContainer = styled(Paper)(({theme})=>({
 }));
 
 export {CustomButton, CustomContainer, CustomForm, CustomFormContainer, CustomInput, CustomLabel,
-    CustomLink, CustomLogo, CustomSubtitle, CustomTitle, CustomPageContainer, CustomCardContainer,
+    CustomLink, CustomLogo, CustomSubtitle, CustomTitle, CustomHomePageContainer,
+    CustomPageContainer, CustomCardContainer,
 }

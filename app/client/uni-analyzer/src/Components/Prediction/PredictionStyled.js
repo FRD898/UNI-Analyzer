@@ -1,9 +1,10 @@
 import { styled } from '@mui/material/styles';
-import {Paper,Box} from "@mui/material/";
-const CustomPredictionPageContainer = styled(Paper)(({theme})=>({
+import {Paper,Box,Grid} from "@mui/material/";
+const CustomPredictionPageContainer = styled(Grid)(({theme})=>({
     width: "100%",
     height: "auto",
     padding: "0px 60px",
+    margin: "0"
 }))
 const CustomPredictionFormContainer = styled(Box)(({theme})=>({
     border: `solid 6px ${theme.palette.secondary.main}`,

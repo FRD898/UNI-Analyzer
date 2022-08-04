@@ -15,40 +15,64 @@ const headCells = [
       label: 'Nombres',
     },
     {
+      id: 'code',
+      numeric: false,
+      disablePadding: false,
+      label: 'Código',
+    },
+    {
+      id: 'residence',
+      numeric: true,
+      disablePadding: false,
+      label: '1',
+    },
+    {
+      id: 'absence',
+      numeric: true,
+      disablePadding: false,
+      label: '2',
+    },
+    {
       id: 'pc1',
-      numeric: true,
+      numeric: false,
       disablePadding: false,
-      label: 'PC1',
-    },
-    {
-      id: 'pc2',
-      numeric: true,
-      disablePadding: false,
-      label: 'PC2',
-    },
-    {
-      id: 'participation',
-      numeric: true,
-      disablePadding: false,
-      label: 'Participación',
+      label: '3',
     },
     {
       id: 'tasks',
+      numeric: false,
+      disablePadding: false,
+      label: '4',
+    },
+    {
+      id: 'meanPcs',
       numeric: true,
       disablePadding: false,
-      label: 'Tareas',
+      label: '5',
     },
     {
       id: 'middle',
       numeric: true,
       disablePadding: false,
-      label: 'Parcial',
+      label: '6',
+    },
+    {
+      id: 'predictor',
+      numeric: false,
+      disablePadding: false,
+      label: 'Modelo',
     },
     {
       id: 'prediction',
       numeric: true,
       disablePadding: false,
-      label: 'Resultado',
+      label: 'Aprueba',
+    },
+    {
+      id: 'finalMark',
+      numeric: true,
+      disablePadding: false,
+      label: 'Nota final',
     },
   ];
 
@@ -79,6 +103,7 @@ export default function EnhancedTableHead(props) {
               align={headCell.numeric ? 'right' : 'left'}
               padding={headCell.disablePadding ? 'none' : 'normal'}
               sortDirection={orderBy === headCell.id ? order : false}
+              style={{ maxwidth: 50 }}
             >
               <TableSortLabel
                 active={orderBy === headCell.id}

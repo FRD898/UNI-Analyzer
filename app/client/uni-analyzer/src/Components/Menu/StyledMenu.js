@@ -1,11 +1,12 @@
 import { styled } from '@mui/material/styles';
 import {Box,
+        Grid,
         List,
         ListItem} from "@mui/material/";
 import { NavLink } from "react-router-dom";
-const CustomMenuContainer = styled(Box)(({theme})=>({
-    width:"300px",
-    height:"auto",
+const CustomMenuContainer = styled(Grid)(({theme})=>({
+    width:"100%",
+    height:"100%",
     borderRight: `4px solid ${theme.palette.secondary.main}`,
     background: theme.palette.primary.main,
     display: "flex",
@@ -31,7 +32,7 @@ const CustomNavLink = styled(NavLink)(({theme})=>({
     margin:"4px",
 }));
 
-const CustomUserInfo = styled(Box)(({theme})=>({
+const CustomUserInfo = styled(Grid)(({theme})=>({
     color: theme.palette.text.primary,
     display: "flex",
     flexDirection: "column",
@@ -39,7 +40,7 @@ const CustomUserInfo = styled(Box)(({theme})=>({
     padding: "30px"
 }));
 
-const CustomUserName = styled(Box)(({theme})=>({
+const CustomUserName = styled(Grid)(({theme})=>({
     display:"block",
     fontSize: theme.palette.text.sm,
     color: theme.palette.secondary.main,
