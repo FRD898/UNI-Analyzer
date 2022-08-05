@@ -113,6 +113,7 @@ const CustomPageContainer = styled(Paper)(({theme})=>({
     width: "100%",
     height: "100%",
     textAlign: "center",
+    flexDirection: "column",
     margin:0,
 }));
 

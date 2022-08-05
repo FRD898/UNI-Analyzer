@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import {Paper,Box} from "@mui/material/";
+import {Paper,Box,Grid} from "@mui/material/";
 const CustomCardsContainer = styled(Box)(({theme})=>({
     display: 'flex',
     flexDirection: "row",
@@ -18,4 +18,13 @@ const CustomImageAnalysis = styled('img')(({theme})=>({
     height: "200px"
 }));
 
-export {CustomCardsContainer,CustomAnalysisPageContainer, CustomImageAnalysis}
+const CustomChartContainer = styled('Grid')(({theme})=>({
+    backgroundColor: 'white',
+    border: `6px solid ${theme.palette.secondary.main}`,
+    margin:"20px 60px",
+    padding: "20px 40px",
+    borderRadius: "12px",
+    color: theme.palette.primary.dark,
+}));
+export {CustomCardsContainer,CustomAnalysisPageContainer,
+    CustomChartContainer,CustomImageAnalysis}
