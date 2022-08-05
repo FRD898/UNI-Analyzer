@@ -15,33 +15,58 @@ import { Bar,Chart } from 'react-chartjs-2';
 ChartJS.register(LinearScale,CategoryScale, BarElement, Tooltip, Legend, BarController);
 
 export function BarChart(props) {
-    var points=[];
+    var points={};
     var studentsResult=[]
-    var answers = ["Residencia","Faltas","PC1","Tareas","Prácticas","Parcial"]
+    var vars = ["Residencia","Faltas","PC1","Tareas","Prácticas","Parcial","Resultado"]
+    var category = vars.indexOf(props.var)
     for (const student of props.classrooms.students){
-        points.push(student['mark_prediction'])
         studentsResult.push(student.prediction)
+        var cat = category===6?student['prediction']:student.answers[category]
+        if(category==0)
+            (cat==0?cat="Lima":cat="Otro Departamento")
+        else if(category==2 || category==3)
+            (cat==0?cat="Sí":cat="No")
+        else if(category == 6)
+            cat==0?cat="Aprobará":cat="Reprobará"
+
+        if(Object.keys(points).indexOf(cat.toString())===-1){
+            points[cat]=1;
+        }else{
+            points[cat]++;
+        }
     }
-    console.log(studentsResult)
     const options = {
         responsive: true,
         plugins: {
-          legend: {
-            position: 'top',
-          },
-          title: {
-            display: true,
-            text: 'Chart.js Bar Chart',
-          },
+            legend: {
+                display: 'false',
+            },
+            title: {
+                display: true,
+                text: 'Chart.js Bar Chart',
+                color: "black",
+            },
         },
+        scales:{
+            x: {
+                ticks: {
+                    font: {
+                        weight: "bold",
+                    }
+                }
+            }
+        }
     };
-    const labels = points;
+    const labels = Object.keys(points);
     const data = {
         labels,
         datasets: [
         {
-            data: points,
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
+            label: props.var,
+            data: Object.values(points),
+            backgroundColor: labels.map((l,id)=>
+            id%2==0?theme.palette.primary.light:theme.palette.primary.dark
+            )
         }
         ]
     };

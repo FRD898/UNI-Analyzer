@@ -10,9 +10,8 @@ import SelectComponent from "../SelectComponent/SelectComponent";
 import { Chart } from 'react-chartjs-2';
 
 export default function AnalysisBar(){
-    const [stateBubble, setStateBubble] = useState({'loaded':false,'classrooms':[],"class_names":[], "room":""});
-    const [x, setX] = useState("");
-    const [y, setY] = useState("");
+    const [stateBar, setStateBar] = useState({'loaded':false,'classrooms':[],"class_names":[], "room":""});
+    const [x, setX] = useState("Residencia");
 
     useEffect(()=>{
         getClassrooms().then(
@@ -21,7 +20,7 @@ export default function AnalysisBar(){
                 for(const room of res){
                     class_names.push(room.class_name)
                 }
-                setStateBubble({...stateBubble,
+                setStateBar({...stateBar,
                     'loaded':true,
                     'classrooms':res,
                     "class_names":class_names,
@@ -31,8 +30,8 @@ export default function AnalysisBar(){
         )
     },[])
     const setRoom = (newRoom)=>{
-        setStateBubble({
-            ...stateBubble,
+        setStateBar({
+            ...stateBar,
             room:newRoom,
         })
     }
@@ -44,21 +43,17 @@ export default function AnalysisBar(){
                     <Grid item>
                         <Grid>
                         <SelectComponent atr={x} setAtr={setX}
-                        label="X"
-                        options={["Residencia","Faltas","PC1","Tareas","Prácticas","Parcial"]}
+                        label="Atributo"
+                        options={["Residencia","Faltas","PC1","Tareas","Prácticas","Parcial","Resultado"]}
                         />
-                        <SelectComponent atr={y} setAtr={setY}
-                        label="Y"
-                        options={["Residencia","Faltas","PC1","Tareas","Prácticas","Parcial"]}
-                        />
-                        <SelectComponent atr={stateBubble.room} setAtr={setRoom}
+                        <SelectComponent atr={stateBar.room} setAtr={setRoom}
                         label="Salón"
-                        options={stateBubble["class_names"]}
+                        options={stateBar["class_names"]}
                         />
                         </Grid>
                     </Grid>
                     <Grid item>
-                        {stateBubble.loaded?<BarChart vars={{x,y}} room={stateBubble.room} classrooms={stateBubble.classrooms[stateBubble["class_names"].indexOf(stateBubble.room)]}/>:null}
+                        {stateBar.loaded?<BarChart var={x} room={stateBar.room} classrooms={stateBar.classrooms[stateBar["class_names"].indexOf(stateBar.room)]}/>:null}
                     </Grid>
                 </CustomChartContainer>
             </CustomPageContainer>
