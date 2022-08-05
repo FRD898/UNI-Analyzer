@@ -1,4 +1,4 @@
-import React from 'react';
+import {React,useRef,useEffect} from 'react';
 import { theme } from "../../theme";
 import {
   Chart as ChartJS,
@@ -6,10 +6,11 @@ import {
   PointElement,
   Tooltip,
   Legend,
+  BubbleController
 } from 'chart.js';
-import { Bubble } from 'react-chartjs-2';
+import { Bubble, Chart } from 'react-chartjs-2';
 
-ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
+ChartJS.register(BubbleController, LinearScale, PointElement, Tooltip, Legend);
 
 export function BubbleChart(props) {
   var points=[];
@@ -73,5 +74,6 @@ export function BubbleChart(props) {
       }
     ],
   };
-  return <Bubble options={options} data={data} />;
+  //const chartRef = useRef();
+  return <Bubble options={options} data={data}/>;
 }
