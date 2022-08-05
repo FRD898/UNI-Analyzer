@@ -1,13 +1,10 @@
 import { CustomSearchInputContainer } from "../PredictionStyled";
-import { CustomInput } from "../../CustomStyles/CustomComponents";
-import SearchIcon from '@mui/icons-material/Search';
 import TablePrediction from "../TablePrediction/TablePrediction";
 import { theme } from "../../theme";
 import { ThemeProvider } from '@mui/material/styles';
 import { useEffect, useState } from "react";
 import { getClassrooms } from "../../../Services/UserService";
 import Autocomplete from '@mui/material/Autocomplete';
-import { TextField } from "@mui/material";
 import { CustomInputSearch } from "./CustomClassPredictionStyle";
 
 
@@ -32,14 +29,6 @@ export default function ClassPrediction(){
             }
         )
     },[])
-
-    const handleSearchClassroom = ()=>{
-        /*for (const room of classrooms.classrooms) {
-            if (room['class_name'].includes(classroom)){
-                console.log(room['class_name'])
-            }
-        }*/
-    }
     return (
         <ThemeProvider theme={theme}>
             <CustomSearchInputContainer>

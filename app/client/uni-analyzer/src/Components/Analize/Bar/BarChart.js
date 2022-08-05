@@ -1,16 +1,15 @@
-import {React,useEffect,useRef} from 'react';
+import {React} from 'react';
 import { theme } from "../../theme";
 import {
 Chart as ChartJS,
 LinearScale,
-PointElement,
 BarElement,
 Tooltip,
 Legend,
 BarController,
 CategoryScale,
 } from 'chart.js';
-import { Bar,Chart } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(LinearScale,CategoryScale, BarElement, Tooltip, Legend, BarController);
 
@@ -22,12 +21,12 @@ export function BarChart(props) {
     for (const student of props.classrooms.students){
         studentsResult.push(student.prediction)
         var cat = category===6?student['prediction']:student.answers[category]
-        if(category==0)
-            (cat==0?cat="Lima":cat="Otro Departamento")
-        else if(category==2 || category==3)
-            (cat==0?cat="Sí":cat="No")
-        else if(category == 6)
-            cat==0?cat="Aprobará":cat="Reprobará"
+        if(category===0)
+            (cat===0?cat="Lima":cat="Otro Departamento")
+        else if(category===2 || category===3)
+            (cat===0?cat="Sí":cat="No")
+        else if(category === 6)
+            cat===0?cat="Aprobará":cat="Reprobará"
 
         if(Object.keys(points).indexOf(cat.toString())===-1){
             points[cat]=1;
@@ -65,7 +64,7 @@ export function BarChart(props) {
             label: props.var,
             data: Object.values(points),
             backgroundColor: labels.map((l,id)=>
-            id%2==0?theme.palette.primary.light:theme.palette.primary.dark
+            id%2===0?theme.palette.primary.light:theme.palette.primary.dark
             )
         }
         ]

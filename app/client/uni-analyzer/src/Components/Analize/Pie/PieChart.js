@@ -1,14 +1,10 @@
-import {React,useEffect,useRef} from 'react';
-import { theme } from "../../theme";
+import {React} from 'react';
+//import { theme } from "../../theme";
 import {
 Chart as ChartJS,
-LinearScale,
-PointElement,
-BarElement,
 Tooltip,
 Legend,
 PieController,
-CategoryScale,
 ArcElement,
 } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
@@ -23,12 +19,12 @@ export function PieChart(props) {
     for (const student of props.classrooms.students){
         studentsResult.push(student.prediction)
         var cat = category===6?student['prediction']:student.answers[category]
-        if(category==0)
-            (cat==0?cat="Lima":cat="Otro Departamento")
-        else if(category==2 || category==3)
-            (cat==0?cat="Sí":cat="No")
-        else if(category == 6)
-            cat==0?cat="Aprobará":cat="Reprobará"
+        if(category===0)
+            (cat===0?cat="Lima":cat="Otro Departamento")
+        else if(category===2 || category===3)
+            (cat===0?cat="Sí":cat="No")
+        else if(category === 6)
+            cat===0?cat="Aprobará":cat="Reprobará"
 
         if(Object.keys(points).indexOf(cat.toString())===-1){
             points[cat]=1;

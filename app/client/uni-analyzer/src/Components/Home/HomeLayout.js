@@ -1,5 +1,5 @@
 import Menu from "../Menu/Menu";
-import { Navigate, Outlet } from "react-router-dom";
+import {  Outlet } from "react-router-dom";
 import { CustomHomePageContainer } from "../CustomStyles/CustomComponents";
 import {  Grid } from '@mui/material';
 export default function HomeLayout(){

@@ -121,12 +121,10 @@ export default function TablePrediction(props){
                     <Grid item xs={6}>
                         <List dense={true}>
                             <ListItemText
-                                primary="1:Residencia"
-                                secondary="(1:Lima 0:Otro departamento)"
+                                primary="1:Reside en Lima"
                             />
                             <ListItemText
-                                    primary="3:PC1"
-                                    secondary="(1:Se presentó 0:No se presentó)"
+                                    primary="3:Asistió a la PC1"
                             />
                             <ListItemText
                                     primary="5:Promedio de PCs antes del parcial"
@@ -139,8 +137,7 @@ export default function TablePrediction(props){
                                     primary="2:Porcentaje de Faltas"
                                 />
                                  <ListItemText
-                                primary="4:Tareas"
-                                secondary="(1:Presentó 0:No presentó)"
+                                primary="4:Presentó tareas"
                                 />
                                 <ListItemText
                                     primary="6:Nota del parcial"
@@ -200,14 +197,14 @@ export default function TablePrediction(props){
                                     {row.name}
                                 </TableCell>
                                 <TableCell align="right">{row.code}</TableCell>
-                                <TableCell id="test" align="right">{row.answers[0]==0?"No":"Sí"}</TableCell>
+                                <TableCell id="test" align="right">{row.answers[0]===0?"No":"Sí"}</TableCell>
                                 <TableCell align="right">{row.answers[1]}</TableCell>
-                                <TableCell align="right">{row.answers[2]==0?"No":"Sí"}</TableCell>
-                                <TableCell align="right">{row.answers[3]==0?"No":"Sí"}</TableCell>
+                                <TableCell align="right">{row.answers[2]===0?"No":"Sí"}</TableCell>
+                                <TableCell align="right">{row.answers[3]===0?"No":"Sí"}</TableCell>
                                 <TableCell align="right">{row.answers[4]}</TableCell>
                                 <TableCell align="right">{row.answers[5]}</TableCell>
                                 <TableCell align="right">{row.predictor}</TableCell>
-                                <TableCell align="right">{row.prediction==0?"No":"Sí"}</TableCell>
+                                <TableCell align="right">{row.prediction===0?"No":"Sí"}</TableCell>
                                 <TableCell align="right">{row.mark_prediction}</TableCell>
                                 </TableRow>
                             );

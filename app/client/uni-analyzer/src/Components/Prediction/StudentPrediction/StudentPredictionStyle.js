@@ -1,4 +1,4 @@
-import { Box, FormGroup, Grid, TextField, Typography } from '@mui/material';
+import { FormGroup, Grid, TextField, Typography } from '@mui/material';
 import {styled } from '@mui/material/styles';
 const CustomFormPrediction = styled(FormGroup)(({theme})=>({
     background: theme.palette.background.paper,

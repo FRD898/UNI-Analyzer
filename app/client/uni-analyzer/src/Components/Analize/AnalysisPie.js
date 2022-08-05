@@ -4,10 +4,9 @@ import { ThemeProvider } from "@mui/material/styles";
 import { CustomPageContainer, CustomTitle } from "../CustomStyles/CustomComponents";
 import { Grid } from "@mui/material";
 import { getClassrooms } from "../../Services/UserService";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { CustomChartContainer } from "./AnalysisStyled";
 import SelectComponent from "../SelectComponent/SelectComponent";
-import { Chart } from 'react-chartjs-2';
 
 export default function AnalysisPie(){
     const [stateBar, setStateBar] = useState({'loaded':false,'classrooms':[],"class_names":[], "room":""});

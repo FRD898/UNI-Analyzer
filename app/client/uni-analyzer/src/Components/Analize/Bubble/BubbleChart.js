@@ -1,4 +1,4 @@
-import {React,useRef,useEffect} from 'react';
+import {React} from 'react';
 import { theme } from "../../theme";
 import {
   Chart as ChartJS,
@@ -8,7 +8,7 @@ import {
   Legend,
   BubbleController
 } from 'chart.js';
-import { Bubble, Chart } from 'react-chartjs-2';
+import { Bubble } from 'react-chartjs-2';
 
 ChartJS.register(BubbleController, LinearScale, PointElement, Tooltip, Legend);
 
@@ -68,7 +68,7 @@ export function BubbleChart(props) {
         data: points,
         pointBackgroundColor: function(context) {
           var index = context.dataIndex;
-          if (studentsResult[index] == 1) return "#28a745"
+          if (studentsResult[index] === 1) return "#28a745"
           else return "#dc3545"
       }
       }
