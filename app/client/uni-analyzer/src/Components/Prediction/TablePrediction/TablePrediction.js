@@ -12,7 +12,7 @@ import Checkbox from '@mui/material/Checkbox';
 import { CustomTableContainer } from "../PredictionStyled";
 import EnhancedTableHead from "./EnhancedTableHead";
 import EnhancedTableToolbar from "./EnhancedTableToolbar";
-import { Typography } from "@mui/material";
+import { List, ListItemText, Grid } from "@mui/material";
 
 function descendingComparator(a, b, orderBy) {
 if (b[orderBy] < a[orderBy]) {
@@ -117,14 +117,38 @@ export default function TablePrediction(props){
         <ThemeProvider theme={theme}>
             <CustomTableContainer>
                 <EnhancedTableToolbar numSelected={selected.length} room={props.room} />
-                <Typography>
-                    0:Reside en Lima?
-                    1:Porcentaje de faltas
-                    2:Tomó la PC1?
-                    3:Presentó las tareas?
-                    4:Promedio de PCs antes del parcial
-                    5:Nota del exámen parcial
-                </Typography>
+                <Grid container>
+                    <Grid item xs={6}>
+                        <List dense={true}>
+                            <ListItemText
+                                primary="1:Residencia"
+                                secondary="(1:Lima 0:Otro departamento)"
+                            />
+                            <ListItemText
+                                    primary="3:PC1"
+                                    secondary="(1:Se presentó 0:No se presentó)"
+                            />
+                            <ListItemText
+                                    primary="5:Promedio de PCs antes del parcial"
+                            />
+                        </List>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <List dense={true}>
+                                <ListItemText
+                                    primary="2:Porcentaje de Faltas"
+                                />
+                                 <ListItemText
+                                primary="4:Tareas"
+                                secondary="(1:Presentó 0:No presentó)"
+                                />
+                                <ListItemText
+                                    primary="6:Nota del parcial"
+                                />
+                            </List>
+                    </Grid>
+                </Grid>
+
                 <TableContainer>
                     <Table
                     sx={{ minWidth: 750 }}

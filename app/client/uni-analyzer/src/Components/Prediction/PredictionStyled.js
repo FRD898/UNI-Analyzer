@@ -11,7 +11,7 @@ const CustomPredictionFormContainer = styled(Box)(({theme})=>({
     background: "white",
     height: "auto",
     borderRadius: "24px",
-    padding: "40px",
+    padding: "20px 40px",
 }))
 
 const CustomPredictionOptionContainer = styled(Box)(({theme})=>({
