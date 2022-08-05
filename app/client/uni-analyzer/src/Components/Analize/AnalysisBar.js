@@ -38,7 +38,7 @@ export default function AnalysisBar(){
     return (
         <ThemeProvider theme={theme}>
             <CustomPageContainer>
-                <CustomTitle>Analizar Clustering</CustomTitle>
+                <CustomTitle>Gráfico de Barras</CustomTitle>
                 <CustomChartContainer container direction="column">
                     <Grid item>
                         <Grid>

@@ -25,6 +25,7 @@ const CustomChartContainer = styled('Grid')(({theme})=>({
     padding: "20px 40px",
     borderRadius: "12px",
     color: theme.palette.primary.dark,
+    maxHeight: "100%",
 }));
 export {CustomCardsContainer,CustomAnalysisPageContainer,
     CustomChartContainer,CustomImageAnalysis}

@@ -39,7 +39,7 @@ export default function AnalysisClustering(){
     return (
         <ThemeProvider theme={theme}>
             <CustomPageContainer>
-                <CustomTitle>Analizar Clustering</CustomTitle>
+                <CustomTitle>Gráfico de Burbuja</CustomTitle>
                 <CustomChartContainer container direction="column">
                     <Grid item>
                         <Grid>
