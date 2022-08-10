@@ -11,7 +11,7 @@ Específicamente UNI-ANALYZER permite:
 
 ## Arquitectura
 <img
-  src="./arquitectura.png"
+  src="./arquitectura.jpg"
   alt="Arquitectura UNI-ANALYZER"
   title="Arquitectura Cliente-Servidor"
   style="display: inline-block; margin: 0 auto; max-width: 750px">
